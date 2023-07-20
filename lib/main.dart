@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:third_exam_n8/ui/home/home_screen.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:third_exam_n8/data/model/product_model.dart';
+import 'package:third_exam_n8/data/model/shop_model.dart';
+import 'package:third_exam_n8/ui/app_routes.dart';
+import 'package:third_exam_n8/ui/tabs_box.dart';
+import 'package:third_exam_n8/utils/hive_box.dart';
 
 
 Future<void> main()async {
+
+  await Hive.initFlutter();
+  Hive.registerAdapter(ProductModelAdapter());
+  Hive.registerAdapter(ShopModelAdapter());
+  await Hive.openBox(HiveBox.shop);
+  await Hive.openBox('shop');
+  await Hive.openBox(HiveBox.favorites);
   runApp(const MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
@@ -19,13 +33,10 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (BuildContext context, Widget? child) {
 
-        return MaterialApp(
+        return const MaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
-            useMaterial3: true,
-          ),
-          home: const HomeScreen(),
+          onGenerateRoute: AppRoutes.generateRoute,
+          home: TabBox(),
         );
       },
     );

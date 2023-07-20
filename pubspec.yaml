@@ -19,7 +19,6 @@ dependencies:
   easy_localization: ^3.0.2
   shared_preferences: ^2.1.2
   zoom_tap_animation: ^1.1.0
-  like_button: ^2.0.5
   flutter_slidable: ^3.0.0
   sqflite: ^2.2.8+4
   path_provider: ^2.0.15
@@ -27,6 +26,14 @@ dependencies:
   fluttertoast: ^8.2.2
   mask_text_input_formatter: ^2.4.0
   cupertino_icons: ^1.0.2
+  http: ^1.1.0
+  cached_network_image: ^3.2.3
+  like_button: ^2.0.5
+  shimmer: ^3.0.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  build_runner: ^2.4.6
+  hive_generator: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -43,22 +50,34 @@ flutter:
   fonts:
     - family: Poppins
       fonts:
-        - asset: assets/fonts/Poppins/Poppins-Black.ttf
-        - asset: assets/fonts/Poppins/Poppins-BlackItalic.ttf
-        - asset: assets/fonts/Poppins/Poppins-Bold.ttf
-        - asset: assets/fonts/Poppins/Poppins-BoldItalic.ttf
-        - asset: assets/fonts/Poppins/Poppins-ExtraBold.ttf
-        - asset: assets/fonts/Poppins/Poppins-ExtraBoldItalic.ttf
-        - asset: assets/fonts/Poppins/Poppins-ExtraLight.ttf
-        - asset: assets/fonts/Poppins/Poppins-ExtraLightItalic.ttf
-        - asset: assets/fonts/Poppins/Poppins-Italic.ttf
-        - asset: assets/fonts/Poppins/Poppins-Light.ttf
-        - asset: assets/fonts/Poppins/Poppins-LightItalic.ttf
-        - asset: assets/fonts/Poppins/Poppins-Medium.ttf
-        - asset: assets/fonts/Poppins/Poppins-MediumItalic.ttf
-        - asset: assets/fonts/Poppins/Poppins-Regular.ttf
-        - asset: assets/fonts/Poppins/Poppins-SemiBold.ttf
-        - asset: assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf
-        - asset: assets/fonts/Poppins/Poppins-Thin.ttf
-        - asset: assets/fonts/Poppins/Poppins-ThinItalic.ttf
+        - asset: assets/fonts/Poppins-Black.ttf
+        - asset: assets/fonts/Poppins-BlackItalic.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf
+        - asset: assets/fonts/Poppins-BoldItalic.ttf
+        - asset: assets/fonts/Poppins-ExtraBold.ttf
+        - asset: assets/fonts/Poppins-ExtraBoldItalic.ttf
+        - asset: assets/fonts/Poppins-ExtraLight.ttf
+        - asset: assets/fonts/Poppins-ExtraLightItalic.ttf
+        - asset: assets/fonts/Poppins-Italic.ttf
+        - asset: assets/fonts/Poppins-Light.ttf
+        - asset: assets/fonts/Poppins-LightItalic.ttf
+        - asset: assets/fonts/Poppins-Medium.ttf
+        - asset: assets/fonts/Poppins-MediumItalic.ttf
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+        - asset: assets/fonts/Poppins-SemiBoldItalic.ttf
+        - asset: assets/fonts/Poppins-Thin.ttf
+        - asset: assets/fonts/Poppins-ThinItalic.ttf
+
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Black.ttf
+        - asset: assets/fonts/Inter-Bold.ttf
+        - asset: assets/fonts/Inter-ExtraBold.ttf
+        - asset: assets/fonts/Inter-ExtraLight.ttf
+        - asset: assets/fonts/Inter-Light.ttf
+        - asset: assets/fonts/Inter-Medium.ttf
+        - asset: assets/fonts/Inter-Regular.ttf
+        - asset: assets/fonts/Inter-SemiBold.ttf
+        - asset: assets/fonts/Inter-Thin.ttf
 
