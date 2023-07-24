@@ -32,14 +32,14 @@ class _GridViewWidgetState extends State<GridViewWidget> {
     count = List.filled(widget.products.length, 0);
     setState(() {});
   }
+
   late Box box;
   late Box box2;
 
   @override
   void initState() {
-    box=Hive.box(HiveBox.favorites);
+    box = Hive.box(HiveBox.favorites);
     box2 = Hive.box("shop");
-    productsSaved = box2.values.first;
     _getCategoryData();
     super.initState();
   }
@@ -54,7 +54,7 @@ class _GridViewWidgetState extends State<GridViewWidget> {
           crossAxisSpacing: 10.h,
           childAspectRatio: 0.58),
       itemBuilder: (context, index) => Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),
+        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
         child: Container(
           decoration: BoxDecoration(
               color: Colors.white,
@@ -99,7 +99,7 @@ class _GridViewWidgetState extends State<GridViewWidget> {
                         child: Center(
                           child: GestureDetector(
                             onTap: () {
-                              if(!likedList[index]){
+                              if (!likedList[index]) {
                                 Fluttertoast.showToast(
                                   msg: "Add to favorites",
                                   toastLength: Toast.LENGTH_SHORT,
@@ -107,7 +107,7 @@ class _GridViewWidgetState extends State<GridViewWidget> {
                                   backgroundColor: Colors.white,
                                   textColor: Colors.black,
                                 );
-                              }else{
+                              } else {
                                 Fluttertoast.showToast(
                                   msg: "Delete favorites",
                                   toastLength: Toast.LENGTH_SHORT,
@@ -117,7 +117,8 @@ class _GridViewWidgetState extends State<GridViewWidget> {
                                 );
                                 box.deleteAll(widget.products);
                               }
-                              box.put(widget.products[index].id, widget.products[index]);
+                              box.put(widget.products[index].id,
+                                  widget.products[index]);
                               setState(() {
                                 likedList[index] = !likedList[index];
                               });
@@ -159,12 +160,12 @@ class _GridViewWidgetState extends State<GridViewWidget> {
                       ),
                       ZoomTapAnimation(
                         onTap: () {
-                          count[index]+=1;
+                          count[index] += 1;
                           productsSaved.add({
-                            "name":widget.products[index].name,
-                            "image_url":widget.products[index].imageUrl,
-                            "count":count[index],
-                            "price":widget.products[index].price,
+                            "name": widget.products[index].name,
+                            "image_url": widget.products[index].imageUrl,
+                            "count": count[index],
+                            "price": widget.products[index].price,
                           });
                           Fluttertoast.showToast(
                             msg: "Add to basket",
@@ -173,7 +174,7 @@ class _GridViewWidgetState extends State<GridViewWidget> {
                             backgroundColor: Colors.white,
                             textColor: Colors.black,
                           );
-                          box2.put("shop",productsSaved);
+                          box2.put("shop", productsSaved);
                         },
                         child: Container(
                           width: 140.w,
@@ -206,4 +207,3 @@ class _GridViewWidgetState extends State<GridViewWidget> {
 }
 
 List productsSaved = [];
-
