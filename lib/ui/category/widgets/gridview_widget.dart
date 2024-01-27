@@ -52,7 +52,7 @@ class _GridViewWidgetState extends State<GridViewWidget> {
           crossAxisCount: 2,
           mainAxisSpacing: 10.w,
           crossAxisSpacing: 10.h,
-          childAspectRatio: 0.58),
+          childAspectRatio: 0.55),
       itemBuilder: (context, index) => Padding(
         padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
         child: Container(
@@ -65,8 +65,8 @@ class _GridViewWidgetState extends State<GridViewWidget> {
                     blurRadius: 10.r,
                     offset: Offset.zero)
               ],
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(color: Colors.grey)),
+              borderRadius: BorderRadius.circular(10.r),
+          ),
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
             child: Column(
@@ -104,16 +104,16 @@ class _GridViewWidgetState extends State<GridViewWidget> {
                                   msg: "Add to favorites",
                                   toastLength: Toast.LENGTH_SHORT,
                                   gravity: ToastGravity.BOTTOM,
-                                  backgroundColor: Colors.white,
-                                  textColor: Colors.black,
+                                  backgroundColor: Colors.black38,
+                                  textColor: Colors.white,
                                 );
                               } else {
                                 Fluttertoast.showToast(
                                   msg: "Delete favorites",
                                   toastLength: Toast.LENGTH_SHORT,
                                   gravity: ToastGravity.BOTTOM,
-                                  backgroundColor: Colors.white,
-                                  textColor: Colors.black,
+                                  backgroundColor: Colors.black38,
+                                  textColor: Colors.white,
                                 );
                                 box.deleteAll(widget.products);
                               }
@@ -171,8 +171,8 @@ class _GridViewWidgetState extends State<GridViewWidget> {
                             msg: "Add to basket",
                             toastLength: Toast.LENGTH_SHORT,
                             gravity: ToastGravity.BOTTOM,
-                            backgroundColor: Colors.white,
-                            textColor: Colors.black,
+                            backgroundColor: Colors.black38,
+                            textColor: Colors.white,
                           );
                           box2.put("shop", productsSaved);
                         },
@@ -186,7 +186,7 @@ class _GridViewWidgetState extends State<GridViewWidget> {
                             child: Text(
                               "Add to basket",
                               style: TextStyle(
-                                  fontSize: 18.sp,
+                                  fontSize: 14.sp,
                                   fontFamily: "Inter",
                                   fontWeight: FontWeight.w500,
                                   color: Colors.white),

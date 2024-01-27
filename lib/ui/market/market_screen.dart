@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive/hive.dart';
@@ -30,19 +31,19 @@ class _MarketScreenState extends State<MarketScreen> {
   @override
   void initState() {
     _calculate();
-    // box = Hive.box("saved");
-    // productsHive = box.values;
-
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: Text(
           'Shop',
           style: TextStyle(
+              color: Colors.white,
               fontFamily: "Inter",
               fontSize: 20.sp,
               fontWeight: FontWeight.w500),
@@ -80,10 +81,7 @@ class _MarketScreenState extends State<MarketScreen> {
                                   _calculate();
                                 });
                               },
-                              icon: const Icon(
-                                Icons.delete,
-                                color: Colors.red,
-                              ),
+                              icon: const Icon(Icons.delete, color: Colors.red),
                             )
                           ],
                         ),
@@ -108,14 +106,8 @@ class _MarketScreenState extends State<MarketScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      'Total Price ',
-                      style: TextStyle(fontSize: 20.sp),
-                    ),
-                    const Icon(
-                      Icons.arrow_right_alt_sharp,
-                      size: 60,
-                    ),
+                    Text('Total Price ', style: TextStyle(fontSize: 20.sp)),
+                    Icon(CupertinoIcons.arrow_right, size: 30.r),
                     Text(
                       '\$$sum',
                       style: TextStyle(

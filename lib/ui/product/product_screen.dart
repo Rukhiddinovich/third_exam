@@ -44,7 +44,7 @@ class _ProductScreenState extends State<ProductScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.black,
         title: Text(
           "Products",
           style: TextStyle(
@@ -55,17 +55,16 @@ class _ProductScreenState extends State<ProductScreen> {
         ),
         actions: [
           IconButton(
+          splashColor: Colors.white,
               onPressed: () {
                 Navigator.pushNamed(context, RouteNames.favoriteScreen);
               },
-              icon: Icon(Icons.favorite, size: 25.sp)),
+              icon: Icon(Icons.favorite, size: 25.sp,color: Colors.white)),
           SizedBox(width: 15.w)
         ],
       ),
       body: isLoading
-          ? const Center(
-              child: CircularProgressIndicator(color: Colors.blue),
-            )
+          ? const Center(child: CircularProgressIndicator.adaptive())
           : products.isEmpty
               ? Center(
                   child: Text(

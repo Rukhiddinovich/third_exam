@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:third_exam_n8/data/model/product_model.dart';
@@ -33,7 +35,17 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (BuildContext context, Widget? child) {
 
-        return const MaterialApp(
+        return MaterialApp(
+          theme: ThemeData(
+            fontFamily: "Inter",
+            scaffoldBackgroundColor: Colors.black,
+            actionIconTheme: ActionIconThemeData(
+              backButtonIconBuilder: (BuildContext context) => IconButton(
+                onPressed: () => Navigator.maybePop(context),
+                icon: Icon(CupertinoIcons.back, color: Colors.white),
+              ),
+            ),
+          ),
           debugShowCheckedModeBanner: false,
           onGenerateRoute: AppRoutes.generateRoute,
           home: TabBox(),

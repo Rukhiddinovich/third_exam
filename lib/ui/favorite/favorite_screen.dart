@@ -34,7 +34,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.black,
         title: Text(
           "Favorites",
           style: TextStyle(
@@ -45,9 +45,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         ),
       ),
       body: isLoading
-          ? const Center(
-              child: CircularProgressIndicator(color: Colors.blue),
-            )
+          ? const Center(child: CircularProgressIndicator.adaptive())
           : products.isEmpty
               ? Center(
                   child: Text(
@@ -64,9 +62,10 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                       crossAxisCount: 2,
                       mainAxisSpacing: 10.w,
                       crossAxisSpacing: 10.h,
-                      childAspectRatio: 0.58),
+                      childAspectRatio: 0.55),
                   itemBuilder: (context, index) => Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
                     child: Container(
                       decoration: BoxDecoration(
                           color: Colors.white,
@@ -77,8 +76,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                                 blurRadius: 10.r,
                                 offset: Offset.zero)
                           ],
-                          borderRadius: BorderRadius.circular(20.r),
-                          border: Border.all(color: Colors.grey)),
+                          borderRadius: BorderRadius.circular(20.r),),
                       child: Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: 10.w, vertical: 10.h),
@@ -118,12 +116,13 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.symmetric(vertical: 20.h),
+                                    padding:
+                                        EdgeInsets.symmetric(vertical: 20.h),
                                     child: Text(
                                       "USD ${products[index].price}",
                                       style: TextStyle(
                                           fontWeight: FontWeight.w600,
-                                          fontSize: 22.sp,
+                                          fontSize: 20.sp,
                                           color: Colors.blue),
                                     ),
                                   ),
@@ -140,7 +139,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                                         child: Text(
                                           "Add to basket",
                                           style: TextStyle(
-                                              fontSize: 18.sp,
+                                              fontSize: 14.sp,
                                               fontFamily: "Inter",
                                               fontWeight: FontWeight.w500,
                                               color: Colors.white),

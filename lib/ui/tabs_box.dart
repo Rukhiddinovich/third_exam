@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:third_exam_n8/ui/market/market_screen.dart';
 import 'package:third_exam_n8/ui/product/product_screen.dart';
@@ -26,7 +27,7 @@ class _TabBoxState extends State<TabBox> {
       body: screens[currentScreenIndex],
       bottomNavigationBar: ClipRRect(
         child: BottomNavigationBar(
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.black,
           type: BottomNavigationBarType.fixed,
           onTap: (index) {
             setState(() {
@@ -34,19 +35,19 @@ class _TabBoxState extends State<TabBox> {
             });
           },
           currentIndex: currentScreenIndex,
-          unselectedIconTheme: const IconThemeData(color: Colors.black),
+          unselectedIconTheme: const IconThemeData(color: Colors.white),
           selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.black,
+          unselectedItemColor: Colors.white,
           selectedIconTheme: const IconThemeData(color: Colors.white),
-          items: const [
+          items:  [
             BottomNavigationBarItem(
-                icon: Icon(Icons.category),
+                icon: Icon(CupertinoIcons.rectangle_3_offgrid),
                 label: "Category"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.rectangle_rounded),
+                icon: Icon(CupertinoIcons.rectangle_grid_2x2),
                 label: "Products"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.shopping_basket),
+                icon: Icon(CupertinoIcons.shopping_cart),
                 label: "Basket"),
           ],
         ),

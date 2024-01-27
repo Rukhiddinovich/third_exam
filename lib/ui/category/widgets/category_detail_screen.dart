@@ -48,7 +48,7 @@ class _CategoryDetailScreenState extends State<CategoryDetailScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.black,
         title: Text(
           widget.title,
           style: TextStyle(
@@ -60,9 +60,7 @@ class _CategoryDetailScreenState extends State<CategoryDetailScreen> {
         centerTitle: true,
       ),
       body: isLoading
-          ? const Center(
-              child: CircularProgressIndicator(color: Colors.blue),
-            )
+          ? const Center(child: CircularProgressIndicator.adaptive())
           : products.isEmpty
               ? Center(
                   child: Text(

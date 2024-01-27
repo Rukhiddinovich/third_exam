@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:third_exam_n8/data/model/category_model.dart';
 import 'package:third_exam_n8/data/universal_response.dart';
@@ -47,7 +48,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.black,
         title: Text(
           "List of categories",
           style: TextStyle(
@@ -59,9 +60,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
         centerTitle: true,
       ),
       body: isLoading
-          ? const Center(
-              child: CircularProgressIndicator(color: Colors.blue),
-            )
+          ? const Center(child: CircularProgressIndicator.adaptive())
           : categoryModels.isEmpty
               ? Center(
                   child: Text(
@@ -110,7 +109,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                     CachedNetworkImage(
                                         imageUrl:
                                             categoryModels[index].imageUrl,
-                                        width: 150.w,placeholder: (context,url)=>const ShimmerScreen()),
+                                        width: 150.w,
+                                        placeholder: (context, url) =>
+                                            const ShimmerScreen()),
                                     SizedBox(width: 40.w),
                                     Text(
                                       categoryModels[index].name,
